@@ -1,6 +1,9 @@
 package com.example.navigation.view
 
 import android.R
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -25,7 +28,19 @@ fun FormIsian(
                     (colorResource(id = R.color.teal_700))
             )}
     ){ isiRuang ->
-
-
+        Column(modifier = Modifier.padding(isiRuang),
+            verticalArrangement = Arrangement.top,
+            horizontalAlignment = Aligment.centerHorizontally)
+        {
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier
+                    .padding(top = 20.dp)
+                    .width(250.dp),
+                label = {Text(text = "Nama Lengkap")},
+                onValueChange = {},
+            )
+        }
     }
 }
